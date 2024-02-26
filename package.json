@@ -4,7 +4,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "prepare": "cd .. && husky src/.husky"
+        "prepare": "husky"
     },
     "devDependencies": {
         "@inertiajs/vue3": "^1.0.0",

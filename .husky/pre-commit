@@ -1,0 +1,2 @@
+docker compose exec -T app composer run phpstan
+docker compose exec -T app ./vendor/bin/pint
