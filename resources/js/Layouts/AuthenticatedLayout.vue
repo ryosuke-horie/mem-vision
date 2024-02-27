@@ -7,7 +7,12 @@ import NavLink from "@/Components/NavLink.vue";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
 import { Link } from "@inertiajs/vue3";
 
-const showingNavigationDropdown = ref(false);
+defineProps({
+    user: {
+        type: Object,
+        required: true,
+    },
+});
 </script>
 
 <template>
@@ -46,7 +51,7 @@ const showingNavigationDropdown = ref(false);
                     <a
                         class="flex-none text-xl font-semibold dark:text-white"
                         href="#"
-                        >User名（ジム名）</a
+                        >{{ user.name }}</a
                     >
                 </div>
                 <nav
