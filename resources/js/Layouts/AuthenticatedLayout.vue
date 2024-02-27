@@ -1,10 +1,4 @@
-<script setup lang="ts">
-import { ref } from "vue";
-import ApplicationLogo from "@/Components/ApplicationLogo.vue";
-import Dropdown from "@/Components/Dropdown.vue";
-import DropdownLink from "@/Components/DropdownLink.vue";
-import NavLink from "@/Components/NavLink.vue";
-import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
+<script setup>
 import { Link } from "@inertiajs/vue3";
 
 defineProps({
@@ -59,36 +53,8 @@ defineProps({
                     data-hs-accordion-always-open
                 >
                     <ul class="space-y-1.5">
-                        <li>
-                            <Link
-                                class="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm text-slate-700 rounded-lg hover:bg-gray-100 dark:bg-gray-900 dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                                href="members"
-                            >
-                                <svg
-                                    class="size-4"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <path
-                                        d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"
-                                    />
-                                    <circle cx="9" cy="7" r="4" />
-                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                                </svg>
-                                会員情報
-                            </Link>
-                        </li>
-
                         <!-- アコーディオン付きのサンプル -->
-                        <!-- <li class="hs-accordion" id="users-accordion">
+                        <li class="hs-accordion" id="users-accordion">
                             <button
                                 type="button"
                                 class="hs-accordion-toggle hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:hs-accordion-active:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
@@ -112,7 +78,7 @@ defineProps({
                                     <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
                                     <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                                 </svg>
-                                Users
+                                会員情報
 
                                 <svg
                                     class="hs-accordion-active:block ms-auto hidden size-4 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
@@ -302,7 +268,7 @@ defineProps({
                                     </li>
                                 </ul>
                             </div>
-                        </li> -->
+                        </li>
                     </ul>
                 </nav>
             </div>
