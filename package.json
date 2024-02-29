@@ -17,7 +17,7 @@
         "postcss": "^8.4.31",
         "tailwindcss": "^3.2.1",
         "vite": "^5.1.4",
-        "vue": "^3.4.20"
+        "vue": "^3.4.21"
     },
     "dependencies": {
         "@types/node": "^20.11.20",
