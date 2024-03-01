@@ -25,7 +25,7 @@ defineProps({
                 class="bg-white rounded-xl shadow p-4 sm:p-7 dark:bg-slate-900"
             >
                 <form>
-                    <!-- Section -->
+                    <!-- Section｜プロフィール -->
                     <div
                         class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent"
                     >
@@ -33,7 +33,7 @@ defineProps({
                             <h2
                                 class="text-lg font-semibold text-gray-800 dark:text-gray-200"
                             >
-                                会員情報登録
+                                プロフィール
                             </h2>
                         </div>
                         <!-- End Col -->
@@ -109,7 +109,7 @@ defineProps({
                     </div>
                     <!-- End Section -->
 
-                    <!-- Section -->
+                    <!-- Section｜メモ -->
                     <div
                         class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent"
                     >
