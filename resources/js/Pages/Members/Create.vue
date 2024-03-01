@@ -1,10 +1,12 @@
 <script setup>
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
+import Input from "@/Components/organisms/Input.vue";
+
 /**
  * 会員登録フォーム
  *
  * @see https://preline.co/examples/application-form-layouts.html
  */
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 defineProps({
     user: {
         type: Object,
@@ -37,6 +39,7 @@ defineProps({
                         </div>
                         <!-- End Col -->
 
+                        <!-- Note：分割したInputはコンポーネント未対応 -->
                         <div class="sm:col-span-3">
                             <label
                                 for="af-submit-application-full-name"
@@ -45,7 +48,6 @@ defineProps({
                                 苗字 | 名前
                             </label>
                         </div>
-                        <!-- End Col -->
 
                         <div class="sm:col-span-9">
                             <div class="sm:flex">
@@ -60,68 +62,15 @@ defineProps({
                                 />
                             </div>
                         </div>
-                        <!-- End Col -->
 
-                        <div class="sm:col-span-3">
-                            <label
-                                for="af-submit-application-email"
-                                class="inline-block text-sm font-medium text-gray-500 mt-2.5"
-                            >
-                                Email
-                            </label>
-                        </div>
-                        <!-- End Col -->
-
-                        <div class="sm:col-span-9">
-                            <input
-                                id="af-submit-application-email"
-                                type="email"
-                                class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                            />
-                        </div>
-                        <!-- End Col -->
-
-                        <div class="sm:col-span-3">
-                            <div class="inline-block">
-                                <label
-                                    for="af-submit-application-phone"
-                                    class="inline-block text-sm font-medium text-gray-500 mt-2.5"
-                                >
-                                    電話番号
-                                </label>
-                            </div>
-                        </div>
-                        <!-- End Col -->
-
-                        <div class="sm:col-span-9">
-                            <input
-                                id="af-submit-application-email"
-                                type="email"
-                                class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                            />
-                        </div>
-                        <!-- End Col -->
-
-                        <div class="sm:col-span-3">
-                            <div class="inline-block">
-                                <label
-                                    for="af-submit-application-phone"
-                                    class="inline-block text-sm font-medium text-gray-500 mt-2.5"
-                                >
-                                    住所
-                                </label>
-                            </div>
-                        </div>
-                        <!-- End Col -->
-
-                        <div class="sm:col-span-9">
-                            <input
-                                id="af-submit-application-phone"
-                                type="text"
-                                class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                            />
-                        </div>
-                        <!-- End Col -->
+                        <Input
+                            label="メールアドレス"
+                            id="email"
+                            value=""
+                            required
+                        />
+                        <Input label="電話番号" id="phone" value="" required />
+                        <Input label="住所" id="address" value="" required />
                     </div>
                     <!-- End Section -->
 
