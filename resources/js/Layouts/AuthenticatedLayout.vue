@@ -1,6 +1,6 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 defineProps({
     user: {
@@ -14,6 +14,13 @@ const isOpen = ref(false);
 const toggleAccordion = () => {
     isOpen.value = !isOpen.value;
 };
+
+// ページ読み込み時にURLのパスをチェックして、/member以下の場合はアコーディオンを開く
+onMounted(() => {
+    if (window.location.pathname.startsWith("/member")) {
+        isOpen.value = true;
+    }
+});
 </script>
 
 <template>
