@@ -47,7 +47,11 @@ class MemberController extends Controller
      */
     public function create(): Response
     {
-        return Inertia::render('Members/Create');
+        $user = auth()->user();
+
+        return Inertia::render('Members/Create', [
+            'user' => $user,
+        ]);
     }
 
     /**

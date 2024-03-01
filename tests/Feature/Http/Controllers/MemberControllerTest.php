@@ -84,4 +84,18 @@ class MemberControllerTest extends TestCase
                 ->has('user')
         );
     }
+
+    #[Test]
+    public function 新規登録画面_バックエンドに渡すパラメータをテスト()
+    {
+        $this->login();
+        $response = $this->get('/members/create');
+
+        // Inertiaレスポンスをテスト
+        $response->assertInertia(
+            fn (Assert $page) => $page
+                ->component('Members/Create')
+                ->has('user')
+        );
+    }
 }
