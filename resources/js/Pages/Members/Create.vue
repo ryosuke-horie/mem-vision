@@ -1,4 +1,9 @@
 <script setup>
+/**
+ * 会員登録フォーム
+ *
+ * @see https://preline.co/examples/application-form-layouts.html
+ */
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 defineProps({
     user: {

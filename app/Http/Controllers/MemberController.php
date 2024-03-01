@@ -29,7 +29,7 @@ class MemberController extends Controller
         $user = auth()->user();
 
         // ログインしていない場合はログイン画面にリダイレクト
-        if (!$user) {
+        if (! $user) {
             return redirect()->route('login');
         }
 
@@ -48,6 +48,7 @@ class MemberController extends Controller
     public function create(): Response
     {
         $user = auth()->user();
+
         return Inertia::render('Members/Create', [
             'user' => $user,
         ]);
