@@ -1,6 +1,7 @@
 <script setup>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import Input from "@/Components/organisms/Input.vue";
+import FileInput from "@/Components/organisms/FileInput.vue";
 
 /**
  * 会員登録フォーム
@@ -33,8 +34,6 @@ defineProps({
                                 class="text-lg font-semibold text-gray-800 dark:text-gray-200"
                             >
                                 会員情報登録
-                                <!-- 赤文字で必須 -->
-                                <span class="text-red-500 text-sm">*必須</span>
                             </h2>
                         </div>
                         <!-- End Col -->
@@ -74,7 +73,7 @@ defineProps({
                     </div>
                     <!-- End Section -->
 
-                    <!-- Section -->
+                    <!-- Section|顔写真 -->
                     <div
                         class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent"
                     >
@@ -87,80 +86,26 @@ defineProps({
                         </div>
                         <!-- End Col -->
 
-                        <div class="sm:col-span-3">
-                            <label
-                                for="af-submit-application-resume-cv"
-                                class="inline-block text-sm font-medium text-gray-500 mt-2.5"
-                            >
-                                1枚目
-                            </label>
-                        </div>
-                        <!-- End Col -->
+                        <FileInput
+                            label="1枚目"
+                            id="af-submit-application-resume-cv"
+                            value=""
+                            required
+                        />
 
-                        <div class="sm:col-span-9">
-                            <label
-                                for="af-submit-application-resume-cv"
-                                class="sr-only"
-                                >Choose file</label
-                            >
-                            <input
-                                type="file"
-                                name="af-submit-application-resume-cv"
-                                id="af-submit-application-resume-cv"
-                                class="block w-full border border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600 file:bg-transparent file:border-0 file:bg-gray-100 file:me-4 file:py-2 file:px-3 dark:file:bg-gray-700 dark:file:text-gray-400"
-                            />
-                        </div>
-                        <!-- End Col -->
+                        <FileInput
+                            label="2枚目"
+                            id="af-submit-application-resume-cv"
+                            value=""
+                            required
+                        />
 
-                        <div class="sm:col-span-3">
-                            <label
-                                for="af-submit-application-resume-cv"
-                                class="inline-block text-sm font-medium text-gray-500 mt-2.5"
-                            >
-                                2枚目
-                            </label>
-                        </div>
-                        <!-- End Col -->
-
-                        <div class="sm:col-span-9">
-                            <label
-                                for="af-submit-application-resume-cv"
-                                class="sr-only"
-                                >Choose file</label
-                            >
-                            <input
-                                type="file"
-                                name="af-submit-application-resume-cv"
-                                id="af-submit-application-resume-cv"
-                                class="block w-full border border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600 file:bg-transparent file:border-0 file:bg-gray-100 file:me-4 file:py-2 file:px-3 dark:file:bg-gray-700 dark:file:text-gray-400"
-                            />
-                        </div>
-                        <!-- End Col -->
-
-                        <div class="sm:col-span-3">
-                            <label
-                                for="af-submit-application-resume-cv"
-                                class="inline-block text-sm font-medium text-gray-500 mt-2.5"
-                            >
-                                3枚目
-                            </label>
-                        </div>
-                        <!-- End Col -->
-
-                        <div class="sm:col-span-9">
-                            <label
-                                for="af-submit-application-resume-cv"
-                                class="sr-only"
-                                >Choose file</label
-                            >
-                            <input
-                                type="file"
-                                name="af-submit-application-resume-cv"
-                                id="af-submit-application-resume-cv"
-                                class="block w-full border border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600 file:bg-transparent file:border-0 file:bg-gray-100 file:me-4 file:py-2 file:px-3 dark:file:bg-gray-700 dark:file:text-gray-400"
-                            />
-                        </div>
-                        <!-- End Col -->
+                        <FileInput
+                            label="3枚目"
+                            id="af-submit-application-resume-cv"
+                            value=""
+                            required
+                        />
                     </div>
                     <!-- End Section -->
 
@@ -172,31 +117,18 @@ defineProps({
                             <h2
                                 class="text-lg font-semibold text-gray-800 dark:text-gray-200"
                             >
-                                プロフィール
+                                メモ
                             </h2>
                         </div>
-                        <!-- End Col -->
-                        <div class="sm:col-span-3">
-                            <div class="inline-block">
-                                <label
-                                    for="af-submit-application-bio"
-                                    class="inline-block text-sm font-medium text-gray-500 mt-2.5"
-                                >
-                                    メモ
-                                </label>
-                            </div>
-                        </div>
-                        <!-- End Col -->
 
-                        <div class="sm:col-span-9">
+                        <div class="sm:col-span-12">
                             <textarea
                                 id="af-submit-application-bio"
                                 class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                                 rows="6"
-                                placeholder="Add a cover letter or anything else you want to share."
+                                placeholder="メモ・備考などがあればこちらに入力してください。"
                             ></textarea>
                         </div>
-                        <!-- End Col -->
                     </div>
                     <!-- End Section -->
 
