@@ -1,4 +1,8 @@
 <script setup>
+/**
+ * LabelとInput要素の組み合わせのコンポーネント
+ * １行に１つのラベルと入力欄を表示する
+ */
 defineProps({
     label: {
         type: String,
