@@ -54,4 +54,4 @@ Route::prefix('members')->middleware('auth')->group(function () {
     Route::get('/{member_id}', [MemberController::class, 'show'])->name('members.show');
 });
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

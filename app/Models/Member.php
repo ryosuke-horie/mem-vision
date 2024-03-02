@@ -24,10 +24,7 @@ class Member extends Model
     }
 
     /**
-     * メンバー情報を新規登録
-     *
-     * @param  array  $data  メンバー情報
-     * @return Member
+     * @param  array<string, mixed>  $data
      */
     public function storeMember(array $data): Member
     {
