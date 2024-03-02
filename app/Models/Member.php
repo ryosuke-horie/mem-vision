@@ -22,4 +22,15 @@ class Member extends Model
     {
         return $this->where('user_id', $userId)->get();
     }
+
+    /**
+     * メンバー情報を新規登録
+     *
+     * @param  array  $data  メンバー情報
+     * @return Member
+     */
+    public function storeMember(array $data): Member
+    {
+        return $this->create($data);
+    }
 }

@@ -98,4 +98,26 @@ class MemberControllerTest extends TestCase
                 ->has('user')
         );
     }
+
+    #[Test]
+    public function 新規登録処理_case1_正常系_DB登録後リダイレクトされることをテスト()
+    {
+        $this->login();
+
+        $requestBody = [
+            'name'    => 'テスト太郎',
+            'email'   => 'tester@gmail.com',
+            'phone'   => '090-1234-5678',
+            'address' => '東京都新宿区西新宿2-8-1',
+            'image1'  => 'test1.jpg',
+            'image2'  => 'test2.jpg',
+            'image3'  => 'test3.jpg',
+            'note'    => 'テストメモ'
+        ];
+
+        $response = $this->post('/members/store', $requestBody);
+
+        // 一覧画面にリダイレクトされることをテスト
+        $response->assertRedirect('/members');
+    }
 }
