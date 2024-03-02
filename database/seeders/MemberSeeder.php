@@ -15,20 +15,26 @@ class MemberSeeder extends Seeder
         // ユーザーを作成
         Member::create([
             'user_id' => 1,
-            'name' => 'テスト太郎',
-            'nickname' => 'テストニックネーム',
+            'last_name' => '山田',
+            'first_name' => '太郎',
+            'phone' => '090-1234-5678',
+            'email' => 'test@mail.com',
+            'image1' => 'image1.jpg',
+            'image2' => 'image2.jpg',
+            'image3' => 'image3.jpg',
+            'nickname' => 'ヤマダ'
         ]);
 
         Member::create([
             'user_id' => 1,
-            'name' => 'テスト次郎',
-            'nickname' => 'テストニックネーム2',
-        ]);
-
-        Member::create([
-            'user_id' => 1,
-            'name' => 'テスト三郎',
-            'nickname' => 'テストニックネーム3',
+            'last_name' => '田中',
+            'first_name' => '花子',
+            'phone' => '090-1234-5678',
+            'email' => 'test@gmail.com',
+            'image1' => 'image4.jpg',
+            'image2' => 'image5.jpg',
+            'image3' => 'image6.jpg',
+            'nickname' => 'タナカ'
         ]);
     }
 }

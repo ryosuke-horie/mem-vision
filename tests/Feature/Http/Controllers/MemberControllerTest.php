@@ -105,7 +105,8 @@ class MemberControllerTest extends TestCase
         $this->login();
 
         $requestBody = [
-            'name' => 'テスト太郎',
+            'last_name' => '山田',
+            'first_name' => '太郎',
             'email' => 'tester@gmail.com',
             'phone' => '090-1234-5678',
             'address' => '東京都新宿区西新宿2-8-1',
