@@ -22,7 +22,7 @@ class MemberSeeder extends Seeder
             'image1' => 'image1.jpg',
             'image2' => 'image2.jpg',
             'image3' => 'image3.jpg',
-            'nickname' => 'ヤマダ'
+            'nickname' => 'ヤマダ',
         ]);
 
         Member::create([
@@ -34,7 +34,7 @@ class MemberSeeder extends Seeder
             'image1' => 'image4.jpg',
             'image2' => 'image5.jpg',
             'image3' => 'image6.jpg',
-            'nickname' => 'タナカ'
+            'nickname' => 'タナカ',
         ]);
     }
 }

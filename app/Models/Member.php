@@ -19,7 +19,7 @@ class Member extends Model
         'image1',
         'image2',
         'image3',
-        'nickname'
+        'nickname',
     ];
 
     /**
