@@ -23,6 +23,7 @@ class MemberFactory extends Factory
             'first_name' => $this->faker->firstName,
             'phone' => $this->faker->phoneNumber,
             'email' => $this->faker->unique()->safeEmail,
+            'address' => $this->faker->address,
             'image1' => 'image1.jpg',
             'image2' => 'image2.jpg',
             'image3' => 'image3.jpg',

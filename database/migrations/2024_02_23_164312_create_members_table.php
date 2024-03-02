@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('phone');
             $table->string('email');
+            $table->string('address');
             $table->string('image1')->nullable(); // 画像1
             $table->string('image2')->nullable(); // 画像2
             $table->string('image3')->nullable(); // 画像3

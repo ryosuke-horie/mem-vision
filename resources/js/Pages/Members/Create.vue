@@ -32,6 +32,8 @@ const address = ref("");
  */
 const submit = () => {
     let postData = {
+        last_name: lastName.value,
+        first_name: firstName.value,
         email: email.value,
         phone: phone.value,
         address: address.value,
