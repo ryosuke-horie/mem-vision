@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import { router } from "@inertiajs/vue3";
+import { router, useForm } from "@inertiajs/vue3";
 
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import Input from "@/Components/organisms/Input.vue";
@@ -27,6 +27,12 @@ const email = ref("");
 const phone = ref("");
 const address = ref("");
 
+const form = useForm({
+    file1: "",
+    file2: "",
+    file3: "",
+});
+
 /**
  * 会員情報送信処理
  */
@@ -37,6 +43,9 @@ const submit = () => {
         email: email.value,
         phone: phone.value,
         address: address.value,
+        file1: form.file1,
+        file2: form.file2,
+        file3: form.file3,
     };
 
     // Inertia.jsを使って会員情報を登録
@@ -130,21 +139,21 @@ const submit = () => {
                         <FileInput
                             label="1枚目"
                             id="af-submit-application-resume-cv"
-                            value=""
+                            @change="form.file1 = $event.target.files[0]"
                             required
                         />
 
                         <FileInput
                             label="2枚目"
                             id="af-submit-application-resume-cv"
-                            value=""
+                            @change="form.file2 = $event.target.files[0]"
                             required
                         />
 
                         <FileInput
                             label="3枚目"
                             id="af-submit-application-resume-cv"
-                            value=""
+                            @change="form.file3 = $event.target.files[0]"
                             required
                         />
                     </div>
