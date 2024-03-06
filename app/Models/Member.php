@@ -45,6 +45,7 @@ class Member extends Model
         // ログインユーザー(ジム)のIDをメンバー情報に紐づける
         $data['user_id'] = $userId;
 
+        // DBにメンバー情報を登録
         return $this->create($data);
     }
 }
