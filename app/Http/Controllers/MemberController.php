@@ -29,7 +29,7 @@ class MemberController extends Controller
         $user = auth()->user();
 
         // ログインしていない場合はログイン画面にリダイレクト
-        if (! $user) {
+        if (!$user) {
             return redirect()->route('login');
         }
 
@@ -60,7 +60,7 @@ class MemberController extends Controller
     public function store(StoreMemberRequest $request): RedirectResponse
     {
         // 会員情報を登録
-        $this->member->storeMember($request->all());
+        $this->member->storeMember($request);
 
         return redirect()->route('members.index');
     }
