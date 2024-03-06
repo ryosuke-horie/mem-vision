@@ -38,20 +38,26 @@ const form = useForm({
  * 会員情報送信処理
  */
 const submit = () => {
-    let postData = {
-        last_name: lastName.value,
-        first_name: firstName.value,
-        email: email.value,
-        phone: phone.value,
-        address: address.value,
-        file1: form.file1,
-        file2: form.file2,
-        file3: form.file3,
-        memo: memo.value,
-    };
+    // FormDataオブジェクトの作成
+    const formData = new FormData();
 
-    // Inertia.jsを使って会員情報を登録
-    router.post("/members/store", postData);
+    // テキストフィールドのデータをFormDataに追加
+    formData.append("last_name", lastName.value);
+    formData.append("first_name", firstName.value);
+    formData.append("email", email.value);
+    formData.append("phone", phone.value);
+    formData.append("address", address.value);
+    formData.append("memo", memo.value);
+
+    // ファイルデータが存在する場合、FormDataに追加
+    if (form.file1) formData.append("file1", form.file1);
+    if (form.file2) formData.append("file2", form.file2);
+    if (form.file3) formData.append("file3", form.file3);
+
+    // Inertia.jsを使ってFormDataを含む会員情報を登録
+    router.post("/members/store", formData, {
+        forceFormData: true,
+    });
 };
 </script>
 
@@ -140,22 +146,22 @@ const submit = () => {
 
                         <FileInput
                             label="1枚目"
-                            id="af-submit-application-resume-cv"
-                            @change="form.file1 = $event.target.files[0]"
+                            id="file1"
+                            @file-selected="(file) => (form.file1 = file)"
                             required
                         />
 
                         <FileInput
                             label="2枚目"
-                            id="af-submit-application-resume-cv"
-                            @change="form.file2 = $event.target.files[0]"
+                            id="file2"
+                            @file-selected="(file) => (form.file2 = file)"
                             required
                         />
 
                         <FileInput
                             label="3枚目"
-                            id="af-submit-application-resume-cv"
-                            @change="form.file3 = $event.target.files[0]"
+                            id="file3"
+                            @file-selected="(file) => (form.file3 = file)"
                             required
                         />
                     </div>
