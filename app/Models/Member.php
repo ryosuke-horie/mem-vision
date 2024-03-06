@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
 class Member extends Model
@@ -47,19 +48,34 @@ class Member extends Model
         // ログインユーザー(ジム)のIDをメンバー情報に紐づける
         $data['user_id'] = $userId;
 
-        // 画像ファイルを取得しハッシュ名を取得
+        // ファイルがアップロードされているか確認 TODO:Requestクラスに移動
+        if (!$data->hasFile('file1') || !$data->hasFile('file2') || !$data->hasFile('file3')) {
+            throw new \Exception("必須データがありません", 1);
+        }
+
+        // 画像ファイルを取得
         $file1 = $data->file('file1');
         $file2 = $data->file('file2');
         $file3 = $data->file('file3');
 
+        // 型チェック TODO:Requestクラスに移動
+        if (
+            !$file1 instanceof UploadedFile ||
+            !$file2 instanceof UploadedFile ||
+            !$file3 instanceof UploadedFile
+        ) {
+            throw new \Exception("ファイルアップロードに問題があります");
+        }
+
+        // ファイル名をハッシュ化
         $file1Name = $file1->hashName();
         $file2Name = $file2->hashName();
         $file3Name = $file3->hashName();
 
         // 画像ファイルを保存
-        Storage::disk('s3')->putFile('members', $file1, 'public');
-        Storage::disk('s3')->putFile('members', $file2, 'public');
-        Storage::disk('s3')->putFile('members', $file3, 'public');
+        Storage::disk('s3')->put($file1Name, $file1, 'public');
+        Storage::disk('s3')->put($file2Name, $file2, 'public');
+        Storage::disk('s3')->put($file3Name, $file3, 'public');
 
         // 保存用にArrayに変換
         $data = $data->all();
