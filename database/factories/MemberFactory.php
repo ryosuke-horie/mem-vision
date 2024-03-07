@@ -19,8 +19,15 @@ class MemberFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'name' => fake()->name(),
-            'nickname' => fake()->name(),
+            'last_name' => $this->faker->lastName,
+            'first_name' => $this->faker->firstName,
+            'phone' => $this->faker->phoneNumber,
+            'email' => $this->faker->unique()->safeEmail,
+            'address' => $this->faker->address,
+            'image1' => 'image1.jpg',
+            'image2' => 'image2.jpg',
+            'image3' => 'image3.jpg',
+            'nickname' => $this->faker->userName,
         ];
     }
 }

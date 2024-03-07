@@ -41,7 +41,7 @@ abstract class TestCase extends BaseTestCase
         }
 
         // Laravel Ver.11 以降は、Schema::getTables() とする
-        foreach (Schema::getAllTables() as $table) {
+        foreach (Schema::getTables() as $table) {
             if (isset($table->name)) {
                 $name = $table->name;
             } else {

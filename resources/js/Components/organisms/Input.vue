@@ -27,6 +27,9 @@ defineProps({
         default: false,
     },
 });
+
+// インプット要素の値を定義
+const value = defineModel();
 </script>
 
 <template>
@@ -43,7 +46,7 @@ defineProps({
     <div class="sm:col-span-9">
         <input
             :id="id"
-            :value="value"
+            v-model="value"
             :placeholder="placeholder"
             :type="type"
             :required="required"

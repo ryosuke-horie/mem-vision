@@ -43,7 +43,7 @@ Route::prefix('members')->middleware('auth')->group(function () {
     // 新規登録
     Route::get('/create', [MemberController::class, 'create'])->name('members.create');
     // 登録処理
-    Route::post('/', [MemberController::class, 'store'])->name('members.store');
+    Route::post('/store', [MemberController::class, 'store'])->name('members.store');
     // 編集
     Route::get('/{member_id}/edit', [MemberController::class, 'edit'])->name('members.edit');
     // 更新処理

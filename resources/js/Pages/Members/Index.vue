@@ -36,14 +36,22 @@ defineProps({
                                             scope="col"
                                             class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
                                         >
-                                            年齢
+                                            住所
                                         </th>
                                         <th
                                             scope="col"
                                             class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
                                         >
-                                            ニックネーム
+                                            メールアドレス
                                         </th>
+
+                                        <th
+                                            scope="col"
+                                            class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
+                                        >
+                                            電話番号
+                                        </th>
+
                                         <th
                                             scope="col"
                                             class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase"
@@ -63,17 +71,23 @@ defineProps({
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200"
                                             >
-                                                {{ member.name }}
+                                                {{ member.last_name
+                                                }}{{ member.first_name }}
                                             </td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"
                                             >
-                                                {{ member.nickname }}
+                                                {{ member.address }}
                                             </td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"
                                             >
-                                                {{ member.name }}
+                                                {{ member.email }}
+                                            </td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"
+                                            >
+                                                {{ member.phone }}
                                             </td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium"
