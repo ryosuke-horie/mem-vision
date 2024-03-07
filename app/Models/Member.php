@@ -73,9 +73,9 @@ class Member extends Model
         $file3Name = $file3->hashName();
 
         // 画像ファイルを保存
-        Storage::disk('s3')->put($file1Name, $file1, 'public');
-        Storage::disk('s3')->put($file2Name, $file2, 'public');
-        Storage::disk('s3')->put($file3Name, $file3, 'public');
+        Storage::disk('s3')->putFileAs('member', $file1, $file1Name);
+        Storage::disk('s3')->putFileAs('member', $file2, $file2Name);
+        Storage::disk('s3')->putFileAs('member', $file3, $file3Name);
 
         // 保存用にArrayに変換
         $data = $data->all();
